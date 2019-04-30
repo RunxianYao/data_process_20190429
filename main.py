@@ -3,6 +3,7 @@
 import sys
 import getopt
 from util.redisutil import RedisResource
+import  process.tableprocess as TableProcess
 
 
 class Usage(Exception):
@@ -19,6 +20,7 @@ def main(argv=None):
             RedisResource.set("test1","33333333333333333333333333333333333333333333333333333333333333")
             v1 = RedisResource.get("test1")
             print v1
+            TableProcess.add_table_and_rename()
         except getopt.error, msg:
             raise Usage(msg)
     except Usage, err:

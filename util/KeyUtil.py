@@ -12,8 +12,8 @@ def phonenumber_imsi_register_info(phonenumber,imsi):
     return number + colon +phonenumber+ colon + imsi + colon + rg_info
 
 # IMSI:${imsi}:TOPHONENUMBER
-def imsi_tophonenumber(imsi):
-    return imsi + colon + imsi + colon + tophonenumber
+def imsi_tophonenumber(pimsi):
+    return imsi + colon + pimsi + colon + tophonenumber
 
 
 # PHONE_NUMBER:${phoneNumber}:REGISTER_INFO
