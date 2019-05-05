@@ -47,12 +47,12 @@ def add_table_and_rename():
     phonenumber_imsi_reg_info = KeyUtil.phonenumber_imsi_register_info("*","*")
     allKeys = RedisResource.keys(phonenumber_imsi_reg_info)
     for key in allKeys :
-        print("满足条件的KEY：" + key)
+        # print("满足条件的KEY：" + key)
         msg = "满足条件的KEY：" + key
         log.logger.info(msg)
         # 生成新的表
         keyarr = string.split(key,KeyUtil.colon)
-        print(keyarr)
+        # print(keyarr)
         imsi = keyarr[3]
         phone_number = keyarr[1]
         #新增表
@@ -63,7 +63,7 @@ def add_table_and_rename():
         #修改原来表名
         new_table = KeyUtil.phonenumber_rg_info(phone_number)
         log.logger.info("OLD_TABLE[%s]->NEW_TABLE[%s]",key,new_table)
-        # RedisResource.rename(key,new_table)
+        RedisResource.rename(key,new_table)
     log.logger.info("流程处理完毕，程序退出！！")
 
 
